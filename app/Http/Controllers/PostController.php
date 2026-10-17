@@ -6,23 +6,51 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function newshow($surname,$name)
+    // Вывод фамилии и имени
+    public function newshow($surname, $name)
     {
-        return   $surname . ' ' . $name;
+        return $surname . ' ' . $name;
     }
 
-    public function shows($id){
+    // Вывод поста по ID
+    public function shows($id)
+    {
         return 'post ' . $id;
     }
-    public function show(){
+
+    // Приветствие
+    public function show()
+    {
         return "hello world";
     }
 
-    public function all(){
+    // Вывод всех постов
+    public function all()
+    {
         return "all posts";
     }
 
-    public function example(){
-        return view( 'post.post');
+    // Вывод представления post.post
+    public function example()
+    {
+        return view('post.post');
+    }
+
+    // Список постов
+    public function index()
+    {
+        return 'Список всех постов';
+    }
+
+    // Создание поста
+    public function create()
+    {
+        return 'Создание нового поста';
+    }
+
+    // Вывод старого поста по ID
+    public function oldshow($id)
+    {
+        return 'Старый пост ' . $id;
     }
 }
