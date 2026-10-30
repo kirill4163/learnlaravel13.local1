@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -6,6 +5,13 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+
+
+Route::get('/', function () {
+    return '!!!!!!!!!!!!!!!!!';
+});
+/* 47. Введение в Blade в Laravel */
+Route::get( '/users', [UserController::class, 'index']); //users
 
 
 // Обращение к контроллерам
@@ -43,10 +49,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-
-Route::get('/', function () {
-    return '!!!!!!!!!!!!!!!!!';
+Route::get('/', function(){
+    return view('migrate');
 });
+
+
+
 
 Route::get('/about', function () {
     return 'about page';
@@ -189,3 +197,5 @@ Route::get('/user-info/{name}/{id}', [UserController::class, 'show'])
         'id' => '[0-9]+'
     ])
     ->name('user.show');
+
+
